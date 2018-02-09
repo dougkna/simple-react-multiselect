@@ -7,11 +7,11 @@ export default class App extends Component {
     this.state = {
       open: false,
       all_options: [
-        {id: 1, value: 'option'},
-        {id: 2, value: 'choice'},
-        {id: 3, value: 'pick'},
-        {id: 4, value: 'draw'},
-        {id: 5, value: 'selection'},
+        {id: 1, value: 'Milk'},
+        {id: 2, value: 'Yogurt'},
+        {id: 3, value: 'Sourdough'},
+        {id: 4, value: 'Corn'},
+        {id: 5, value: 'Cheese'},
       ],
       searched_options: [],
       selected: {},
@@ -53,7 +53,7 @@ export default class App extends Component {
     if (e.target.value.trim().length) this.setState({ open: true });
     var searched = [];
     this.state.all_options.map((option) => {
-      if (option.value.indexOf(e.target.value) >= 0) {
+      if (option.value.toLowerCase().indexOf(e.target.value.toLowerCase()) >= 0) {
         searched.push({ id: option.id, value: option.value });
       }
     });
